@@ -1,0 +1,24 @@
+{
+  "name": "shop_bot_for_admin_panel",
+  "version": "1.0.0",
+  "description": "Telegram bot-shop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EsilSemitone/telegram-bot-shop.git"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "shop'"
+  ],
+  "author": "Esil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EsilSemitone/telegram-bot-shop/issues"
+  },
+  "homepage": "https://github.com/EsilSemitone/telegram-bot-shop#readme"
+}

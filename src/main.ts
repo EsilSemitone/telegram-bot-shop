@@ -9,8 +9,8 @@ import { App } from './app';
 function buildContainer(): Container {
     const container = new Container();
     const mainModule = new ContainerModule(bind => {
-        bind<ILoggerService>(KEYS.Logger_Service).to(LoggerService).inSingletonScope();
-        bind<IConfigService>(KEYS.Config_Service).to(ConfigService).inSingletonScope();
+        bind<ILoggerService>(KEYS.loggerService).to(LoggerService).inSingletonScope();
+        bind<IConfigService>(KEYS.configService).to(ConfigService).inSingletonScope();
         bind<App>(KEYS.App).to(App);
     });
     container.load(mainModule);

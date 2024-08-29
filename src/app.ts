@@ -18,8 +18,8 @@ export class App {
     commands: Command[];
 
     constructor(
-        @inject(KEYS.Config_Service) private configService: IConfigService,
-        @inject(KEYS.Logger_Service) private loggerService: ILoggerService,
+        @inject(KEYS.configService) private configService: IConfigService,
+        @inject(KEYS.loggerService) private loggerService: ILoggerService,
     ) {
         this.app = new Telegraf<MyContext>(this.configService.get('TOKEN'));
         this.stage = new Scenes.Stage<MyContext>([new QuizScene(SCENES_ID.quiz).scene]);

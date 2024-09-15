@@ -5,13 +5,14 @@ import 'reflect-metadata';
 import { IConfigService } from './config.service.interface';
 import { KEYS } from '../keys';
 import { ILoggerService } from '../logger/logger.service.interface';
+import { join } from 'path';
 
 @injectable()
 export class ConfigService implements IConfigService {
     config: DotenvParseOutput;
 
-    constructor(@inject(KEYS.Logger_Service) private logger: ILoggerService) {
-        const { parsed, error } = config();
+    constructor(@inject(KEYS.logger_Service) private logger: ILoggerService) {
+        const { parsed, error } = config({path: join(__dirname, '..', '..', '.env')});
         if (error) {
             throw new Error('Произошла ошибка при чтении файла .env ' + JSON.stringify(error));
         }

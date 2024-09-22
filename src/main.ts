@@ -9,6 +9,7 @@ import { App } from './app';
 import { MainScene } from './scene/main-scene';
 import { ProductsScene } from './scene/products-scene';
 import { QuizScene } from './scene/quiz';
+import { CartScene } from './scene/cart-scene';
 
 function buildContainer(): Container {
     
@@ -22,6 +23,8 @@ function buildContainer(): Container {
         bind<MainScene>(KEYS.main_Scene).to(MainScene).inSingletonScope()
         bind<ProductsScene>(KEYS.product_Scene).to(ProductsScene).inSingletonScope()
         bind<QuizScene>(KEYS.quiz_Scene).to(QuizScene).inSingletonScope()
+        bind<CartScene>(KEYS.cart_Scene).to(CartScene).inSingletonScope()
+
     })
     container.load(mainModule)
     container.load(sceneModule)

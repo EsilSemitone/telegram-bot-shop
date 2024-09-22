@@ -22,13 +22,16 @@ export class App {
         @inject(KEYS.main_Scene) private mainScene: IScene,
         @inject(KEYS.product_Scene) private productScene: IScene,
         @inject(KEYS.quiz_Scene) private quizScene: IScene,
+        @inject(KEYS.cart_Scene) private cartScene: IScene,
+
     ) {
         this.app = new Telegraf<MyContext | MyWizardContext>(this.configService.get('TOKEN'));
         this.commands = [new StartCommand(this.app)];
         this.stage = new Scenes.Stage<MyContext | MyWizardContext>([
             mainScene.scene,
             productScene.scene,
-            quizScene.scene
+            quizScene.scene,
+            cartScene.scene
         ]);
     }
 
@@ -41,7 +44,6 @@ export class App {
     useMiddleware(): void {
         this.app.use(new LocalSession({ database: 'session.json' }).middleware());
         this.app.use(this.stage.middleware());
-        this.app.use();
     }
 
     init(): void {

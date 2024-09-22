@@ -5,4 +5,5 @@ export const KEYS = {
     quiz_Scene: Symbol('quiz_Scene'),
     main_Scene: Symbol('main_Scene'),
     product_Scene: Symbol('product_Scene'),
+    cart_Scene: Symbol('cart_Scene')
 };

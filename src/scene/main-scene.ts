@@ -12,9 +12,11 @@ export class MainScene extends MyScene {
         super();
         this.scene = new Scenes.BaseScene(SCENES_ID.main)
         this.scene.enter(this.enter.bind(this));
-        this.scene.hears('Товары🎠', async (ctx) => {ctx.scene.enter(SCENES_ID.products)});
-        // this.scene.hears('Корзина🧺');
-        this.scene.hears('Изменить данные⚙️', async (ctx) => {ctx.scene.enter(SCENES_ID.quiz)});
+        this.scene.hears('🎠Товары', async (ctx) => {
+            await ctx.scene.enter(SCENES_ID.products);
+        });
+        this.scene.hears('🧺Корзина', async (ctx) => {await ctx.scene.enter(SCENES_ID.cart)});
+        this.scene.hears('⚙️Изменить данные', async (ctx) => {await ctx.scene.enter(SCENES_ID.quiz)});
     }
 
     async enter(ctx: MyContext, next?: TelegrafNextFunctionType): Promise<void> {
@@ -22,7 +24,7 @@ export class MainScene extends MyScene {
             'Мы рады видеть вас снова',
             {
                 reply_markup: {
-                    keyboard: [['Товары🎠', 'Корзина🧺'], ['Изменить данные⚙️']],
+                    keyboard: [['🎠Товары', '🧺Корзина'], ['⚙️Изменить данные']],
                     is_persistent: true,
                     resize_keyboard: true,
                     one_time_keyboard: true,

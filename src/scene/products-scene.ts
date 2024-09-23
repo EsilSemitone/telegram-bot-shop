@@ -32,7 +32,7 @@ export class ProductsScene extends WizardScene {
 
         this.useActions.bind(this)();
         this.scene.hears('⚙️Изменить данные', async (ctx) => {await ctx.scene.enter(SCENES_ID.quiz)});
-        // this.scene.hears('🧺Корзина');
+        this.scene.hears('🧺Корзина', async (ctx) => {await ctx.scene.enter(SCENES_ID.cart)});
     }
 
     async choiceCategory (ctx: MyWizardContext): Promise<void> {

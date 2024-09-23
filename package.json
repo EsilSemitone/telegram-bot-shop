@@ -1,24 +1,46 @@
 {
-  "name": "shop_bot_for_admin_panel",
-  "version": "1.0.0",
-  "description": "Telegram bot-shop",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/EsilSemitone/telegram-bot-shop.git"
-  },
-  "keywords": [
-    "telegram",
-    "bot",
-    "shop'"
-  ],
-  "author": "Esil",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/EsilSemitone/telegram-bot-shop/issues"
-  },
-  "homepage": "https://github.com/EsilSemitone/telegram-bot-shop#readme"
+    "name": "shop_bot_for_admin_panel",
+    "version": "1.0.0",
+    "description": "Telegram bot-shop",
+    "main": "index.js",
+    "scripts": {
+        "start": "ts-node ./src/main.ts",
+        "dev": "nodemon",
+        "build": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EsilSemitone/telegram-bot-shop.git"
+    },
+    "keywords": [
+        "telegram",
+        "bot",
+        "shop'"
+    ],
+    "author": "Esil",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/EsilSemitone/telegram-bot-shop/issues"
+    },
+    "homepage": "https://github.com/EsilSemitone/telegram-bot-shop#readme",
+    "devDependencies": {
+        "@types/node": "^22.2.0",
+        "@typescript-eslint/eslint-plugin": "^8.1.0",
+        "@typescript-eslint/parser": "^8.1.0",
+        "eslint": "^9.9.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.2.1",
+        "nodemon": "^3.1.4",
+        "prettier": "^3.3.3",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.5.4"
+    },
+    "dependencies": {
+        "dotenv": "^16.4.5",
+        "inversify": "^6.0.2",
+        "reflect-metadata": "^0.2.2",
+        "telegraf": "^4.16.3",
+        "telegraf-session-local": "^2.1.1",
+        "tslog": "^4.9.3"
+    }
 }
